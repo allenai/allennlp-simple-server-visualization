@@ -18,7 +18,7 @@ server up (it needs to be running on port 8000).
 3. Copy this repo somewhere.
 4. Run `npm install` and then `npm start` (from the `demo/` directory) and then head to
    `localhost:3000` in a browser to be sure that you see a basic UI that says "Your Model Name".
-5. Modify `src/ModelInput.js` and `src/ModelOutput.js` to create input fields for your model's
+5. Modify `src/ModelInput.jsx` and `src/ModelOutput.jsx` to create input fields for your model's
    inputs and visualizations for your model's outputs.  There are `TODOs` everywhere in those two
 files where we anticipate you might want to make changes.  Using `npm start` to run a server means
 that your browser will automatically reload the page every time you make a change to those files,
