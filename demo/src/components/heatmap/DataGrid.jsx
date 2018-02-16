@@ -4,7 +4,6 @@
  * color determined by the data value.
  */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const DataGrid = ({
   xLabels,
@@ -43,19 +42,6 @@ const DataGrid = ({
       ))}
     </div>
   );
-};
-
-DataGrid.propTypes = {
-  xLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ).isRequired,
-  yLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ).isRequired,
-  data: PropTypes.arrayOf(PropTypes.array).isRequired,
-  background: PropTypes.string.isRequired,
-  height: PropTypes.number.isRequired,
-  xLabelWidth: PropTypes.number.isRequired,
 };
 
 export default DataGrid;

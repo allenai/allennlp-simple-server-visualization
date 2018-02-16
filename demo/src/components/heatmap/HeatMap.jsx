@@ -5,7 +5,6 @@
  * each cell, where the colors are determined by the data values (the `DataGrid` component).
  */
 import React from 'react';
-import PropTypes from 'prop-types';
 import XLabels from './XLabels';
 import DataGrid from './DataGrid';
 
@@ -19,19 +18,6 @@ function HeatMap({xLabels, yLabels, data, background, height, xLabelWidth, boxSi
     </div>
   );
 }
-
-HeatMap.propTypes = {
-  xLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ).isRequired,
-  yLabels: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-  ).isRequired,
-  data: PropTypes.arrayOf(PropTypes.array).isRequired,
-  background: PropTypes.string,
-  height: PropTypes.number,
-  xLabelWidth: PropTypes.number,
-};
 
 HeatMap.defaultProps = {
   background: '#329fff',
