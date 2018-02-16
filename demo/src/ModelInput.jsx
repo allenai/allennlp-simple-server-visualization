@@ -3,27 +3,29 @@ import Button from './components/Button'
 import ModelIntro from './components/ModelIntro'
 
 
-// TODO: if you want to have some quickly-accessible examples, you can add them here.  You can then
-// auto-populate your input fields by selecting an example from the select box.
+// TODO: These are some quickly-accessible examples to try out with your model.  They will get
+// added to the select box on the demo page, and will auto-populate your input fields when they
+// are selected.  The names here need to match what's read in `handleListChange` below.
 
 const examples = [
   {
-    field1: "field 1 input for example 1",
-    field2: "field 2 input for example 1"
+    long_text_input: "long text input for example 1",
+    short_text_input: "short text input for example 1"
   },
   {
-    field1: "field 1 input for example 2",
-    field2: "field 2 input for example 2"
+    long_text_input: "long text input for example 2",
+    short_text_input: "short text input for example 2"
   },
   {
-    field1: "field 1 input for example 3",
-    field2: "field 2 input for example 3"
+    long_text_input: "long text input for example 3",
+    short_text_input: "short text input for example 3"
   }
 ];
 
-// TODO: This determines what text shows up in the select box for each example.
+// TODO: This determines what text shows up in the select box for each example.  The input to
+// this function will be one of the items from the `examples` list above.
 function summarizeExample(example) {
-  return example.field1.substring(0, 60);
+  return example.long_text_input.substring(0, 60);
 }
 
 // TODO: You can give a model name and description that show up in your demo.
@@ -46,8 +48,8 @@ class ModelInput extends React.Component {
     if (e.target.value !== "") {
       // TODO: This gets called when the select box gets changed.  You want to set the values of
       // your input boxes with the content in your examples.
-      this.field1.value = examples[e.target.value].field1
-      this.field2.value = examples[e.target.value].field2
+      this.long_text_input.value = examples[e.target.value].long_text_input
+      this.short_text_input.value = examples[e.target.value].short_text_input
     }
   }
 
@@ -55,8 +57,8 @@ class ModelInput extends React.Component {
     const { runModel } = this.props;
 
     // TODO: You need to map the values in your input boxes to json values that get sent to your
-    // predictor.
-    runModel({field1: this.field1.value, field2: this.field2.value});
+    // predictor.  The keys in this dictionary need to match what your predictor is expecting to receive.
+    runModel({long_text_input: this.long_text_input.value, short_text_input: this.short_text_input.value});
   }
 
   render() {
@@ -81,16 +83,17 @@ class ModelInput extends React.Component {
          * TODO: This is where you add your input fields.  You shouldn't have to change any of the
          * code in render() above here.  We're giving a couple of example inputs here, one for a
          * larger piece of text, like a paragraph (the `textarea`) and one for a shorter piece of
-         * text, like a question (the `input`).
+         * text, like a question (the `input`).  You'll probably want to change the variable names
+         * here to match the input variable names in your model.
          */}
 
         <div className="form__field">
-          <label>Table</label>
-          <textarea ref={(x) => this.field1 = x} type="text" autoFocus="true"></textarea>
+          <label>Long text input</label>
+          <textarea ref={(x) => this.long_text_input = x} type="text" autoFocus="true"></textarea>
         </div>
         <div className="form__field">
-          <label>Question</label>
-          <input ref={(x) => this.field2 = x} type="text"/>
+          <label>Short text input</label>
+          <input ref={(x) => this.short_text_input = x} type="text"/>
         </div>
 
        {/* You also shouldn't have to change anything below here. */}
