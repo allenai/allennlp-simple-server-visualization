@@ -5,8 +5,8 @@ idea here is that you copy the code in the `demo/` directory, modify two files t
 that's specific to your model, then run the demo using `npm`, hooking up to the AllenNLP simple
 server.
 
-For a more detailed explanation for how to make this work with your model, see the AllenNLP
-tutorial on visualizing your model (TODO - not yet written).  Here is a very brief outline of the
+For a more detailed explanation for how to make this work with your model, see the [AllenNLP
+tutorial on visualizing your model](https://github.com/allenai/allennlp/blob/master/tutorials/how_to/visualizing_model_internals.md).  Here is a very brief outline of the
 steps involved:
 
 1. Get a simple text in / text out demo of your model running by following the [Predictor
